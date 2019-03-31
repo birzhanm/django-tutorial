@@ -1,0 +1,13 @@
+{% block title %}
+Draft posts
+{% endblock %}
+
+{% block content %}
+<ol>
+{% for draft in draft_posts %}
+<li>
+  <a href="{% url 'blog:post_edit' pk=draft.pk %}">{{ draft.title }}</a>
+</li>
+{% endfor %}
+</ol>
+{% endblock %}
